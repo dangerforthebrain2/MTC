@@ -56,6 +56,14 @@ namespace moving_text_game
         }
         public void Form1_Load(object sender, EventArgs e)
         {
+            //names & changlog contents loading
+            mouse = System.IO.File.ReadAllText("..\\..\\..\\mouseName.txt");
+            text = System.IO.File.ReadAllText("..\\..\\..\\textName.txt");
+            log = System.IO.File.ReadAllText("..\\..\\..\\ChangeLog.txt");
+            //setting the intial text of the text player
+            lblMove.Text = "Click on me!";
+            // sets the version, names of players, and shows a message box
+            lblVersion.Text = "Version: " + version1 + "." + version2 + optinalVersionLetter;
             //load text from filesystem
             TextReader tr = new StreamReader("..\\..\\titles.txt");
             titles = tr.ReadToEnd();
@@ -67,43 +75,32 @@ namespace moving_text_game
             // setting the title, stating the name, wether its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(5);
+            ran = r.Next(6);
 
             if (ran == 0)
             {
-              //this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameBat;
                 this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[0];
-
             }
             if (ran == 1)
             {
-              //this.Text = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players + extraNameOwl;
                 this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[1];
             }
             if (ran == 2)
             {
-              //this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameSub;
                 this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[2];
             }
             if (ran == 3)
             {
-              //this.Text = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players + extraNameFar;
                 this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[3];
             }
             if (ran == 4)
             {
-              //this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameMin;
                 this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[4];
             }
-
-            mouse = System.IO.File.ReadAllText("..\\..\\..\\mouseName.txt");
-            text = System.IO.File.ReadAllText("..\\..\\..\\textName.txt");
-            log = System.IO.File.ReadAllText("..\\..\\..\\ChangeLog.txt");
-            //setting the intial text of the text player
-            lblMove.Text = "Click on me!";
-            // sets the version, names of players, and shows a message box
-            lblVersion.Text = "Version: " + version1 + "." + version2 + optinalVersionLetter;
-
+            if (ran == 5)
+            {
+                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[5];
+            }
 
             for (int x = 0; x < Controls.Count; x++)
             {

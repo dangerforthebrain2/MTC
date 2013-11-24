@@ -150,6 +150,7 @@
     <Content Include="rands.txt" />
     <Content Include="ScoreLog.txt" />
     <Content Include="textName.txt" />
+    <Content Include="titles.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
