@@ -41,8 +41,6 @@ namespace moving_text_game
        String mouse;
        //initaliing the title name strings
        String titles;
-       //intialising the string for the changelog
-       String log;
        //initalising the forms
        Form2 fm;
        textName fm1;
@@ -57,9 +55,8 @@ namespace moving_text_game
         public void Form1_Load(object sender, EventArgs e)
         {
             //names & changlog contents loading
-            mouse = System.IO.File.ReadAllText("..\\..\\..\\mouseName.txt");
-            text = System.IO.File.ReadAllText("..\\..\\..\\textName.txt");
-            log = System.IO.File.ReadAllText("..\\..\\..\\ChangeLog.txt");
+            mouse = System.IO.File.ReadAllText("..\\..\\mouseName.txt");
+            text = System.IO.File.ReadAllText("..\\..\\textName.txt");
             //setting the intial text of the text player
             lblMove.Text = "Click on me!";
             // sets the version, names of players, and shows a message box

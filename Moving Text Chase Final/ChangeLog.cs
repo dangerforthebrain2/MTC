@@ -19,7 +19,7 @@ namespace Forms
 
         private void ChangeLog_Load(object sender, EventArgs e)
         {
-            log = System.IO.File.ReadAllText("..\\..\\..\\ChangeLog.txt");
+            log = System.IO.File.ReadAllText("..\\..\\ChangeLog.txt");
             textBox1.Text = log;
         }
     }
