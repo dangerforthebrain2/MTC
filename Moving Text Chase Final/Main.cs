@@ -28,7 +28,7 @@ namespace moving_text_game
        int partridgeInAPearTree = 0;
        int version2 = 4;
        // optinal version letter, when and full number interation is not approprate
-       String optinalVersionLetter = "c";
+       String optinalVersionLetter = "d";
        // greek version (leave blank for full)
        String greek = "Alpha ";
        //default movment values
@@ -49,6 +49,7 @@ namespace moving_text_game
        // the look of the text player
        String textLeft = ">----";
        String textRight = "----<";
+       
  
         
         public Form1()
@@ -57,6 +58,8 @@ namespace moving_text_game
         }
         public void Form1_Load(object sender, EventArgs e)
         {
+            //using this string to shortening the title
+            String mainTitleText = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players;
             //names & changlog contents loading
             mouse = System.IO.File.ReadAllText("..\\..\\mouseName.txt");
             text = System.IO.File.ReadAllText("..\\..\\textName.txt");
@@ -75,31 +78,35 @@ namespace moving_text_game
             // setting the title, stating the name, wether its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(6);
+            ran = r.Next(7);
 
             if (ran == 0)
             {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[0];
+                this.Text = mainTitleText + set1[0];
             }
             if (ran == 1)
             {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[1];
+                this.Text = mainTitleText + set1[1];
             }
             if (ran == 2)
             {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[2];
+                this.Text = mainTitleText + set1[2];
             }
             if (ran == 3)
             {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[3];
+                this.Text = mainTitleText + set1[3];
             }
             if (ran == 4)
             {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[4];
+                this.Text = mainTitleText + set1[4];
             }
             if (ran == 5)
             {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[5];
+                this.Text = mainTitleText + set1[5];
+            }
+            if (ran == 6)
+            {
+                this.Text = mainTitleText + set1[6];
             }
 
             for (int x = 0; x < Controls.Count; x++)
@@ -129,7 +136,6 @@ namespace moving_text_game
             debug.Visible = true;
             lblVersion.Visible = true;
             viewTitlesToolStripMenuItem.Visible = true;
-            resetNamesToolStripMenuItem.Enabled = true;
             colorSchemesToolStripMenuItem.Visible = true;
             if (enableToolStripMenuItem.Visible == false)
             {
@@ -145,7 +151,6 @@ namespace moving_text_game
             debug.Visible = false;
             lblVersion.Visible = false;
             viewTitlesToolStripMenuItem.Visible = false;
-            resetNamesToolStripMenuItem.Enabled = false;
             colorSchemesToolStripMenuItem.Visible = false;
             if (disableToolStripMenuItem.Visible == false)
             {
@@ -381,15 +386,6 @@ namespace moving_text_game
                 Application.Exit();
             }
         }
-        public void resetNamesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TextWriter tw = new StreamWriter("..\\..\\mouseName.txt");
-            tw.WriteLine("Mouse");
-            tw.Close();
-            TextWriter tw2 = new StreamWriter("..\\..\\textName.txt");
-            tw.WriteLine("Text");
-            tw2.Close();
-        }
 
         // random movment
         public void movment_Tick(object sender, EventArgs e)
@@ -420,22 +416,6 @@ namespace moving_text_game
             rand.Text = "randomMovment: " + val + ", " + "randomTitle: " + ran;
             // debug text updating 
             debug.Text = "" + "";
-            //checking the text's upper right corner
-            if (lblMove.Location.X > label2.Location.X &&
-                lblMove.Location.X < label2.Location.X + label2.Width &&
-                lblMove.Location.Y > label2.Location.Y &&
-                lblMove.Location.Y < label2.Location.Y + label2.Height)
-            {
-                System.Threading.Thread.Sleep(100);
-                lblMove.Left = this.Width / 2 - lblMove.Width / 2;
-                lblMove.Visible = true;
-                TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
-                Debug.Listeners.Add(tr2);
-                Debug.WriteLine(DateTime.Now + " Text Reset");
-                tr2.Close();
-                this.lblMove.Location = new Point(457, 305);
-
-            }
         }
         // difficulty settings
         public void easyToolStripMenuItem_Click(object sender, EventArgs e)
