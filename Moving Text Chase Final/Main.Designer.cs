@@ -352,10 +352,10 @@
             // 
             // viewTitlesToolStripMenuItem
             // 
-            this.viewTitlesToolStripMenuItem.Enabled = false;
             this.viewTitlesToolStripMenuItem.Name = "viewTitlesToolStripMenuItem";
             this.viewTitlesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewTitlesToolStripMenuItem.Text = "View Titles";
+            this.viewTitlesToolStripMenuItem.Visible = false;
             this.viewTitlesToolStripMenuItem.Click += new System.EventHandler(this.viewTitlesToolStripMenuItem_Click);
             // 
             // namesToolStripMenuItem

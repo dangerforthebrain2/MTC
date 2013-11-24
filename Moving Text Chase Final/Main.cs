@@ -39,14 +39,10 @@ namespace moving_text_game
        // setting the names of the players
        String text;
        String mouse;
+       //initaliing the title name strings
+       String titles;
        //intialising the string for the changelog
        String log;
-       // extra version names(bit of fun)
-       String extraNameBat = "    - Batteries not included";
-       String extraNameOwl = "    - I saw an owl!";
-       String extraNameSub = "    - We all live in a yellow submarine!";
-       String extraNameFar = "    - Get off my land!";
-       String extraNameMin = "    - Go away, I'm busy playing Minecraft!";
        //initalising the forms
        Form2 fm;
        textName fm1;
@@ -58,6 +54,73 @@ namespace moving_text_game
         {
             InitializeComponent();
         }
+        public void Form1_Load(object sender, EventArgs e)
+        {
+            //load text from filesystem
+            TextReader tr = new StreamReader("..\\..\\titles.txt");
+            titles = tr.ReadToEnd();
+            tr.Close();
+            label2.Text = text + "'s" + " Score: ";
+            label3.Text = mouse + "'s" + " Score: ";
+
+            String[] set1 = titles.Split('\n');
+            // setting the title, stating the name, wether its alpha or beta, then the version number
+            //generates a random number upon load
+            Random r = new Random();
+            ran = r.Next(5);
+
+            if (ran == 0)
+            {
+              //this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameBat;
+                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[0];
+
+            }
+            if (ran == 1)
+            {
+              //this.Text = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players + extraNameOwl;
+                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[1];
+            }
+            if (ran == 2)
+            {
+              //this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameSub;
+                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[2];
+            }
+            if (ran == 3)
+            {
+              //this.Text = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players + extraNameFar;
+                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[3];
+            }
+            if (ran == 4)
+            {
+              //this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameMin;
+                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + set1[4];
+            }
+
+            mouse = System.IO.File.ReadAllText("..\\..\\..\\mouseName.txt");
+            text = System.IO.File.ReadAllText("..\\..\\..\\textName.txt");
+            log = System.IO.File.ReadAllText("..\\..\\..\\ChangeLog.txt");
+            //setting the intial text of the text player
+            lblMove.Text = "Click on me!";
+            // sets the version, names of players, and shows a message box
+            lblVersion.Text = "Version: " + version1 + "." + version2 + optinalVersionLetter;
+
+
+            for (int x = 0; x < Controls.Count; x++)
+            {
+                if (Controls[x].GetType() == typeof(Label))
+                {
+                    Controls[x].BackColor = Color.Transparent;
+                    Controls[x].ForeColor = Color.Black;
+
+                }
+            }
+            menuStrip1.BackColor = Color.Transparent;
+            menuStrip1.ForeColor = Color.Black;
+            this.BackColor = Color.White;
+            //calling the class below
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
+        }
+
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -117,8 +180,7 @@ namespace moving_text_game
         }
         private void viewTitlesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(extraNameBat + "\n" + extraNameFar + "\n" + extraNameMin + "\n" + extraNameOwl
-                + "\n" + extraNameSub);
+            MessageBox.Show(titles);
         }
 
         public void lblMove_Click(object sender, EventArgs e)
@@ -144,61 +206,7 @@ namespace moving_text_game
         }
 
 
-        public void Form1_Load(object sender, EventArgs e)
-        {
-            // setting the title, stating the name, wether its alpha or beta, then the version number
-            //generates a random number upon load
-            Random r = new Random();
-            ran = r.Next(5);
-
-            if (ran == 0)
-            {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameBat;
-            }
-            if (ran == 1)
-            {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players + extraNameOwl;
-            }
-            if (ran == 2)
-            {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameSub;
-            }
-            if (ran == 3)
-            {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players + extraNameFar;
-            }
-            if (ran == 4)
-            {
-                this.Text = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players + extraNameMin;
-            }
-            //load text from filesystem
-            mouse = System.IO.File.ReadAllText("..\\..\\..\\mouseName.txt");
-            text = System.IO.File.ReadAllText("..\\..\\..\\textName.txt");
-            log = System.IO.File.ReadAllText("..\\..\\..\\ChangeLog.txt");
-            //setting the intial text of the text player
-            lblMove.Text = "Click on me!";
-            // sets the version, names of players, and shows a message box
-            lblVersion.Text = "Version: " + version1 + "." + version2 + optinalVersionLetter;
-            label2.Text = text + "'s" +" Score: ";
-            label3.Text = mouse + "'s" + " Score: ";
-            //initial colour setting
-           
-            for (int x = 0; x < Controls.Count; x++)
-            {
-                if (Controls[x].GetType() == typeof(Label))
-                {
-                    Controls[x].BackColor = Color.Transparent;
-                    Controls[x].ForeColor = Color.Black;
-
-                }
-            }
-            menuStrip1.BackColor = Color.Transparent;
-            menuStrip1.ForeColor = Color.Black;
-            this.BackColor = Color.White;
-            //calling the class below
-            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
-        }
-
+        
         static void OnProcessExit(object sender, EventArgs e)
         {
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog"));
@@ -471,7 +479,7 @@ namespace moving_text_game
             rand.Visible = true;
             debug.Visible = true;
             lblVersion.Visible = true;
-            viewTitlesToolStripMenuItem.Enabled = true;
+            viewTitlesToolStripMenuItem.Visible = true;
         }
 
         private void disableToolStripMenuItem_Click(object sender, EventArgs e)
@@ -480,7 +488,7 @@ namespace moving_text_game
             rand.Visible = false;
             debug.Visible = false;
             lblVersion.Visible = false;
-            viewTitlesToolStripMenuItem.Enabled = false;
+            viewTitlesToolStripMenuItem.Visible = false;
         }
         //game reseting
         public void resetToolStripMenuItem_Click(object sender, EventArgs e)
@@ -534,7 +542,7 @@ namespace moving_text_game
                 label2.Text = text + "'s" + " Score: ";
             }
         }
-       
+
         public void mouseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fm = new Form2();
@@ -554,24 +562,12 @@ namespace moving_text_game
         // about infomation
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
-            System.Windows.Forms.MessageBox.Show( "The Moving Text Chase" + "\n" +
+
+            System.Windows.Forms.MessageBox.Show("The Moving Text Chase" + "\n" +
                 "Version: " + version1.ToString() + "." + version2.ToString() + optinalVersionLetter + " " + greek + players +
                 "\n" + "Coded by : Antony Sedgewick");
-
         }
-
-
-
-
-
     }
 }
 
 // Author: Antony Sedgewick 
-
-/*
-features to add
-stats (counts moves, restarts, wins etc.)
-boundry detection based upon coordinates
-*/
