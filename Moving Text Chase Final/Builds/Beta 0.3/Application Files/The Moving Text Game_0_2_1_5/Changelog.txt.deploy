@@ -1,0 +1,46 @@
+Alpha
+
+Version 0.1 
+came up with concept.
+created movment and mouse click detection.
+
+version 0.1b
+added changing graphics.
+added names to program.
+added score tracking.
+
+version 0.2
+
+added side to side graphics.
+added TextPlayer reseting.
+stopped TextPlayer getting score when not visable.
+added version number to program.
+added debug logs.
+added icon to program.
+
+Version 0.2b - Playtested
+program now refreshs logs each new game.
+moved text score next to the mouse score.
+added names through text files.
+added wins text states and exiting the program.
+added startup alert for name changing.
+added seconds played.
+
+version 0.2c
+added alpha and beta controls.
+added alpha or beta to the title of the form.
+added colour controls to form and text.
+changed the way the scoring system works so that names can be as long as the player(s) want.
+changed the way the phonetic version works, meaning it now has 3 states.
+added new anti-cheat system to all the text on screen(text dissapears for 1 sec).
+
+Version 0.2d
+changed it so that the timer & textScore upcount do not start until the player has moved.
+added a game started checker(easily used to start the scoring).
+added code to be used later to auto reset the text player(commented currently).
+added 2 new colour schemes(Red, Purple).
+
+Version 0.3 22/10/2013
+added options menu for colour changing and anti cheat for this system.
+commented out the popup at the beginning for changing names, will use another form later.
+made it so the game can be started by either player. (the mouse can start the game by clicking the text player)
