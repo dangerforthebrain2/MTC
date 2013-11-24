@@ -90,6 +90,12 @@
     <Compile Include="ChangeLog.Designer.cs">
       <DependentUpon>ChangeLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Schemes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schemes.Designer.cs">
+      <DependentUpon>Schemes.cs</DependentUpon>
+    </Compile>
     <Compile Include="textName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Schemes.resx">
+      <DependentUpon>Schemes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="textName.resx">
       <DependentUpon>textName.cs</DependentUpon>
     </EmbeddedResource>

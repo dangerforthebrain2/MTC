@@ -45,7 +45,10 @@ namespace moving_text_game
        Form2 fm;
        textName fm1;
        ChangeLog fm2;
-       
+       Schemes fm3;
+       // the look of the text player
+       String textLeft = ">----";
+       String textRight = "----<";
  
         
         public Form1()
@@ -127,9 +130,10 @@ namespace moving_text_game
             lblVersion.Visible = true;
             viewTitlesToolStripMenuItem.Visible = true;
             resetNamesToolStripMenuItem.Enabled = true;
-            if (enableToolStripMenuItem.Enabled == false)
+            colorSchemesToolStripMenuItem.Visible = true;
+            if (enableToolStripMenuItem.Visible == false)
             {
-                disableToolStripMenuItem.Enabled = true;
+                disableToolStripMenuItem.Visible = true;
             }
 
         }
@@ -142,13 +146,14 @@ namespace moving_text_game
             lblVersion.Visible = false;
             viewTitlesToolStripMenuItem.Visible = false;
             resetNamesToolStripMenuItem.Enabled = false;
-            if (disableToolStripMenuItem.Enabled == false)
+            colorSchemesToolStripMenuItem.Visible = false;
+            if (disableToolStripMenuItem.Visible == false)
             {
-                enableToolStripMenuItem.Enabled = true;
+                enableToolStripMenuItem.Visible = true;
             }
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        public void Form1_KeyDown(object sender, KeyEventArgs e)
         {
 
             // position reset control
@@ -161,6 +166,7 @@ namespace moving_text_game
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine(DateTime.Now + " Text Reset");
                 tr1.Close();
+                String actlog = System.IO.File.ReadAllText("..\\..\\ActionsLog.txt");
                 this.lblMove.Location = new Point(457, 305);
             }
             if (movment.Enabled == false || players == "MP")
@@ -169,7 +175,7 @@ namespace moving_text_game
                 if (e.KeyCode == Keys.Left)
                 {
                     lblMove.Left -= 15;
-                    lblMove.Text = ">----";
+                    lblMove.Text = textLeft;
                     TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteLine(DateTime.Now + " Moved Left");
@@ -179,7 +185,7 @@ namespace moving_text_game
                 if (e.KeyCode == Keys.Right)
                 {
                     lblMove.Left += 15;
-                    lblMove.Text = "----<";
+                    lblMove.Text = textRight;
                     TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteLine(DateTime.Now + " Moved Right");
@@ -395,29 +401,23 @@ namespace moving_text_game
             if (val == 0)
             {
                 lblMove.Left -= hoz;
-                lblMove.Text = ">----";
+                lblMove.Text = textLeft;
             }
             if (val == 1)
             {
                 lblMove.Left += hoz;
-                lblMove.Text = "----<";
+                lblMove.Text = textRight;
             }
             if (val == 2)
             {
                 lblMove.Top += vert;
-                lblMove.Text = "----<";
             }
             if (val == 3)
             {
                 lblMove.Top -= vert;
-                lblMove.Text = "----<";
             }
 
             rand.Text = "randomMovment: " + val + ", " + "randomTitle: " + ran;
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\rands.txt"));
-            Debug.Listeners.Add(tr1);
-            Debug.WriteLine(val);
-            tr1.Close();
             // debug text updating 
             debug.Text = "" + "";
             //checking the text's upper right corner
@@ -432,7 +432,7 @@ namespace moving_text_game
                 TextWriterTraceListener tr2 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
                 Debug.Listeners.Add(tr2);
                 Debug.WriteLine(DateTime.Now + " Text Reset");
-                tr1.Close();
+                tr2.Close();
                 this.lblMove.Location = new Point(457, 305);
 
             }
@@ -516,6 +516,10 @@ namespace moving_text_game
             score = 0;
             score2 = 0;
             this.lblMove.Location = new Point(457, 305);
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            Debug.Listeners.Add(tr1);
+            Debug.WriteLine(DateTime.Now + " Changed to MP");
+            tr1.Close();
         }
 
         public void playersToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -532,6 +536,10 @@ namespace moving_text_game
             score = 0;
             score2 = 0;
             this.lblMove.Location = new Point(457, 305);
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            Debug.Listeners.Add(tr1);
+            Debug.WriteLine(DateTime.Now + " Changed to SP");
+            tr1.Close();
             
         }
         //name changing
@@ -566,7 +574,6 @@ namespace moving_text_game
 
         private void viewChanglogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //   MessageBox.Show(log);
             fm2 = new ChangeLog();
             fm2.Show();
         }
@@ -574,6 +581,12 @@ namespace moving_text_game
         private void currentNamesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Text Name: " + text + "\n"+ "Mouse Name: " + mouse);
+        }
+
+        private void colorSchemesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fm3 = new Schemes();
+            fm3.Show();
         }
     }
 }

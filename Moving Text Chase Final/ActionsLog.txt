@@ -93,3 +93,38 @@ Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
 Setting Text Colours to: Color [A=255, R=255, G=128, B=128]
 Setting Background Colour to: Color [Black]
 Setting Text Colours to: Color [Black]
+24/11/2013 22:36:42 Moved Left
+24/11/2013 22:36:42 Moved Down
+24/11/2013 22:36:43 Moved Right
+24/11/2013 22:36:43 Moved Left
+24/11/2013 22:36:43 Moved Right
+24/11/2013 22:36:43 Moved Left
+24/11/2013 22:36:43 Moved Right
+24/11/2013 22:36:43 Moved Left
+24/11/2013 22:36:43 Moved Right
+24/11/2013 22:36:43 Moved Up
+24/11/2013 22:36:43 Moved Left
+24/11/2013 23:04:41 Text Reset
+24/11/2013 23:05:25 Text Reset
+24/11/2013 23:05:47 Text Reset
+24/11/2013 23:06:41 Text Reset
+24/11/2013 23:08:12 Text Reset
+24/11/2013 23:09:15 Moved Down
+24/11/2013 23:09:16 Moved Down
+24/11/2013 23:09:16 Moved Left
+24/11/2013 23:09:16 Moved Left
+24/11/2013 23:09:16 Moved Up
+24/11/2013 23:09:16 Moved Right
+24/11/2013 23:09:17 Moved Right
+24/11/2013 23:09:17 Moved Left
+24/11/2013 23:09:17 Moved Down
+24/11/2013 23:09:17 Moved Left
+24/11/2013 23:09:17 Moved Down
+24/11/2013 23:09:17 Moved Left
+24/11/2013 23:09:17 Moved Up
+24/11/2013 23:09:17 Moved Right
+24/11/2013 23:09:17 Moved Left
+24/11/2013 23:09:17 Moved Right
+24/11/2013 23:09:17 Moved Down
+24/11/2013 23:09:17 Moved Right
+24/11/2013 23:10:27 Changed to MP
