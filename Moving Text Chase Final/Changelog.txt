@@ -68,7 +68,8 @@ changed instructions depending on the number of players.
 started on change to the way that colouring works.
 
 Version 0.4c 19/11/13
-sorted changlog viewing
+sorted changlog viewing.
+started working from GIT(will hopefully continue to).
 
 
 
