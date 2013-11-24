@@ -119,7 +119,7 @@ namespace moving_text_game
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
         }
         //debug display options
-        private void enableToolStripMenuItem_Click(object sender, EventArgs e)
+        public void enableToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameStarted.Visible = true;
             rand.Visible = true;
@@ -127,9 +127,14 @@ namespace moving_text_game
             lblVersion.Visible = true;
             viewTitlesToolStripMenuItem.Visible = true;
             resetNamesToolStripMenuItem.Enabled = true;
+            if (enableToolStripMenuItem.Enabled == false)
+            {
+                disableToolStripMenuItem.Enabled = true;
+            }
+
         }
 
-        private void disableToolStripMenuItem_Click(object sender, EventArgs e)
+        public void disableToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameStarted.Visible = false;
             rand.Visible = false;
@@ -137,6 +142,10 @@ namespace moving_text_game
             lblVersion.Visible = false;
             viewTitlesToolStripMenuItem.Visible = false;
             resetNamesToolStripMenuItem.Enabled = false;
+            if (disableToolStripMenuItem.Enabled == false)
+            {
+                enableToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -353,6 +362,8 @@ namespace moving_text_game
                 Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
                 tr1.Close();
             }
+            for (int x = 0; x < Controls.Count; x++)
+            Controls[x].BackColor = Color.Transparent;
         }
 
 // exit button and comfirmation
@@ -544,19 +555,25 @@ namespace moving_text_game
             }
         }
 
-        private void veiwChangelogToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-         //   MessageBox.Show(log);
-              fm2 = new ChangeLog();
-              fm2.Show();
-        }
         // about infomation
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
             System.Windows.Forms.MessageBox.Show("The Moving Text Chase" + "\n" +
-                "Version: " + version1.ToString() + "." + version2.ToString() + optinalVersionLetter + " " + greek + players +
+                "Version: " + greek + version1.ToString() + "." + version2.ToString() + optinalVersionLetter + " " + players +
                 "\n" + "Coded by : Antony Sedgewick");
+        }
+
+        private void viewChanglogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //   MessageBox.Show(log);
+            fm2 = new ChangeLog();
+            fm2.Show();
+        }
+
+        private void currentNamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Text Name: " + text + "\n"+ "Mouse Name: " + mouse);
         }
     }
 }

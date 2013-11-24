@@ -72,6 +72,8 @@ sorted changlog viewing.
 started working from GIT(will hopefully continue to).
 changed titles to using arrays, hopefully making witty titles easier to impliment.
 sutble changes to the code making it a little less bloated.
+added the ability to view the current names and who they are assigned to.
+fixed typo on about screen.
 
 
 
