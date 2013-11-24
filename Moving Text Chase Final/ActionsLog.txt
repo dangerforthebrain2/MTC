@@ -80,3 +80,16 @@
 24/11/2013 21:32:14 Moved Up
 24/11/2013 21:32:14 Moved Up
 24/11/2013 21:32:14 Moved Down
+Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
+Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
+Setting Text Colours to: Color [A=255, R=255, G=128, B=128]
+Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
+Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
+Setting Text Colours to: Color [A=255, R=255, G=128, B=128]
+Setting Text Colours to: Color [A=255, R=255, G=128, B=128]
+Setting Text Colours to: Color [Black]
+Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
+Setting Background Colour to: Color [A=255, R=255, G=128, B=128]
+Setting Text Colours to: Color [A=255, R=255, G=128, B=128]
+Setting Background Colour to: Color [Black]
+Setting Text Colours to: Color [Black]

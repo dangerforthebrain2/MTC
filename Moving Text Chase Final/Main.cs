@@ -101,6 +101,12 @@ namespace moving_text_game
 
             for (int x = 0; x < Controls.Count; x++)
             {
+                if (Controls[x].GetType() == typeof(MenuStrip))
+                {
+                    Controls[x].BackColor = Color.Transparent;
+                    Controls[x].ForeColor = Color.Black;
+
+                } 
                 if (Controls[x].GetType() == typeof(Label))
                 {
                     Controls[x].BackColor = Color.Transparent;
@@ -108,13 +114,30 @@ namespace moving_text_game
 
                 }
             }
-            menuStrip1.BackColor = Color.Transparent;
-            menuStrip1.ForeColor = Color.Black;
             this.BackColor = Color.White;
             //calling the class below
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
         }
+        //debug display options
+        private void enableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gameStarted.Visible = true;
+            rand.Visible = true;
+            debug.Visible = true;
+            lblVersion.Visible = true;
+            viewTitlesToolStripMenuItem.Visible = true;
+            resetNamesToolStripMenuItem.Enabled = true;
+        }
 
+        private void disableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gameStarted.Visible = false;
+            rand.Visible = false;
+            debug.Visible = false;
+            lblVersion.Visible = false;
+            viewTitlesToolStripMenuItem.Visible = false;
+            resetNamesToolStripMenuItem.Enabled = false;
+        }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -295,20 +318,21 @@ namespace moving_text_game
             tr1.Close();
         }
 
-        private void textToolStripMenuItem_Click(object sender, EventArgs e)
+        public void textToolStripMenuItem_Click(object sender, EventArgs e)
         { // colour setting
             colorDialog2.ShowDialog();
-            label1.ForeColor = colorDialog2.Color;
-            label2.ForeColor = colorDialog2.Color;
-            label3.ForeColor = colorDialog2.Color;
-            lblMove.ForeColor = colorDialog2.Color;
-            lblVersion.ForeColor = colorDialog2.Color;
-            lblTop.ForeColor = colorDialog2.Color;
-            timeCount.ForeColor = colorDialog2.Color;
-            gameStarted.ForeColor = colorDialog2.Color;
-            menuStrip1.ForeColor = colorDialog2.Color;
-            menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            label2.BackColor = colorDialog1.Color;
+            for (int x = 0; x < Controls.Count; x++)
+                if (Controls[x].GetType() == typeof(Menu))
+                {
+                    Controls[x].BackColor = colorDialog1.Color;
+                    Controls[x].ForeColor = colorDialog2.Color;
+                }
+            for (int x = 0; x < Controls.Count; x++)
+                if (Controls[x].GetType() == typeof(Label))
+                {
+                    Controls[x].BackColor = colorDialog1.Color;
+                    Controls[x].ForeColor = colorDialog2.Color;
+                }
             TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
             Debug.Listeners.Add(tr1);
             Debug.WriteLine("Setting Text Colours to: " + colorDialog1.Color);
@@ -318,23 +342,13 @@ namespace moving_text_game
                 MessageBox.Show("You have been caught cheating!", "Cheat Detected");
                 this.BackColor = System.Drawing.Color.White;
                 label1.BackColor = System.Drawing.Color.Transparent;
-                label1.ForeColor = System.Drawing.Color.Black;
-                label2.BackColor = System.Drawing.Color.Transparent;
-                label2.ForeColor = System.Drawing.Color.Black;
-                label3.BackColor = System.Drawing.Color.Transparent;
-                label3.ForeColor = System.Drawing.Color.Black;
-                lblMove.BackColor = System.Drawing.Color.Transparent;
-                lblMove.ForeColor = System.Drawing.Color.Black;
-                lblVersion.BackColor = System.Drawing.Color.Transparent;
-                lblVersion.ForeColor = System.Drawing.Color.Black;
-                lblTop.BackColor = System.Drawing.Color.Transparent;
-                lblTop.ForeColor = System.Drawing.Color.Black;
-                timeCount.BackColor = System.Drawing.Color.Transparent;
-                timeCount.ForeColor = System.Drawing.Color.Black;
-                gameStarted.ForeColor = System.Drawing.Color.Black;
-                gameStarted.BackColor = System.Drawing.Color.Transparent;
-                menuStrip1.BackColor = System.Drawing.Color.Transparent;
-                menuStrip1.ForeColor = System.Drawing.Color.Black;
+
+                for (int x = 0; x < Controls.Count; x++)
+                    if (Controls[x].GetType() == typeof(Label))
+                    {
+                        Controls[x].BackColor = Color.Transparent;
+                        Controls[x].ForeColor = Color.Black;
+                    }
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
                 tr1.Close();
@@ -350,13 +364,13 @@ namespace moving_text_game
                 Application.Exit();
             }
         }
-        private void resetNamesToolStripMenuItem_Click(object sender, EventArgs e)
+        public void resetNamesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TextWriter tw = new StreamWriter("..\\..\\..\\mouseName.txt");
-            tw.WriteLine("Mouse ");
+            TextWriter tw = new StreamWriter("..\\..\\mouseName.txt");
+            tw.WriteLine("Mouse");
             tw.Close();
-            TextWriter tw2 = new StreamWriter("..\\..\\..\\textName.txt");
-            tw.WriteLine("Text ");
+            TextWriter tw2 = new StreamWriter("..\\..\\textName.txt");
+            tw.WriteLine("Text");
             tw2.Close();
         }
 
@@ -466,24 +480,7 @@ namespace moving_text_game
                 "you also do this if the text leaves the screen.");
             }
         }
-        //debug display options
-        private void enableToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            gameStarted.Visible = true;
-            rand.Visible = true;
-            debug.Visible = true;
-            lblVersion.Visible = true;
-            viewTitlesToolStripMenuItem.Visible = true;
-        }
 
-        private void disableToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            gameStarted.Visible = false;
-            rand.Visible = false;
-            debug.Visible = false;
-            lblVersion.Visible = false;
-            viewTitlesToolStripMenuItem.Visible = false;
-        }
         //game reseting
         public void resetToolStripMenuItem_Click(object sender, EventArgs e)
         {

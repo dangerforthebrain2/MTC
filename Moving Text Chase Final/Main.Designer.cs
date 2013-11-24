@@ -346,14 +346,14 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // viewTitlesToolStripMenuItem
             // 
             this.viewTitlesToolStripMenuItem.Name = "viewTitlesToolStripMenuItem";
-            this.viewTitlesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewTitlesToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.viewTitlesToolStripMenuItem.Text = "View Titles";
             this.viewTitlesToolStripMenuItem.Visible = false;
             this.viewTitlesToolStripMenuItem.Click += new System.EventHandler(this.viewTitlesToolStripMenuItem_Click);
@@ -371,21 +371,22 @@
             // mouseToolStripMenuItem
             // 
             this.mouseToolStripMenuItem.Name = "mouseToolStripMenuItem";
-            this.mouseToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.mouseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mouseToolStripMenuItem.Text = "Mouse";
             this.mouseToolStripMenuItem.Click += new System.EventHandler(this.mouseToolStripMenuItem_Click);
             // 
             // textToolStripMenuItem1
             // 
             this.textToolStripMenuItem1.Name = "textToolStripMenuItem1";
-            this.textToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.textToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.textToolStripMenuItem1.Text = "Text";
             this.textToolStripMenuItem1.Click += new System.EventHandler(this.textToolStripMenuItem1_Click);
             // 
             // resetNamesToolStripMenuItem
             // 
+            this.resetNamesToolStripMenuItem.Enabled = false;
             this.resetNamesToolStripMenuItem.Name = "resetNamesToolStripMenuItem";
-            this.resetNamesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.resetNamesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.resetNamesToolStripMenuItem.Text = "Reset Names";
             this.resetNamesToolStripMenuItem.Click += new System.EventHandler(this.resetNamesToolStripMenuItem_Click);
             // 
