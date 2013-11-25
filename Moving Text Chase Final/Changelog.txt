@@ -78,5 +78,6 @@ added extra debugging.
 
 Version 0.4d 24/11/13
 removed reseting of names.
+fixed name forms not using new locations.
 
 

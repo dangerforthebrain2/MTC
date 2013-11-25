@@ -21,7 +21,7 @@ namespace Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TextWriter tw = new StreamWriter("..\\..\\..\\mouseName.txt");
+            TextWriter tw = new StreamWriter("..\\..\\mouseName.txt");
             tw.Write(textBox1.Text);
             tw.Close();
            

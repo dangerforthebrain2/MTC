@@ -75,11 +75,11 @@ namespace moving_text_game
             label3.Text = mouse + "'s" + " Score: ";
 
             String[] set1 = titles.Split('\n');
-            // setting the title, stating the name, wether its alpha or beta, then the version number
+            // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
             ran = r.Next(8);
-
+            //ran = ;
             if (ran == 0)
             {
                 this.Text = mainTitleText + set1[0];
@@ -110,7 +110,7 @@ namespace moving_text_game
             }
             if (ran == 7)
             {
-                this.Text = mainTitleText + set1[0];
+                this.Text = mainTitleText + set1[7];
             }
 
             for (int x = 0; x < Controls.Count; x++)
