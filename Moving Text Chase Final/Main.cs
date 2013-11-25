@@ -60,7 +60,7 @@ namespace moving_text_game
             InitializeComponent();
         }
         public void Form1_Load(object sender, EventArgs e)
-        {
+       {
             //using this string to shortening the title
             String mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
             //names & changlog contents loading
@@ -326,7 +326,6 @@ namespace moving_text_game
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine("Seconds Played " + time);
                 tr1.Close();
-
             }
         }
 
