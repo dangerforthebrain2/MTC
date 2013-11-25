@@ -49,11 +49,9 @@ namespace moving_text_game
        String textRight = "----<";
        //all initial stats
        String stats = System.IO.File.ReadAllText("..\\..\\stats.stor");
+       //initial stats values(I suspect this may be a problem)
        int played, txtWin, mouWin;
-       
-       
- 
-        
+       String mainTitleText; 
         public Form1()
         {
             InitializeComponent();
@@ -61,7 +59,7 @@ namespace moving_text_game
         public void Form1_Load(object sender, EventArgs e)
        {
             //using this string to shortening the title
-            String mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
+            mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
             //names & changlog contents loading
             mouse = System.IO.File.ReadAllText("..\\..\\mouseName.stor");
             text = System.IO.File.ReadAllText("..\\..\\textName.stor");
@@ -254,9 +252,7 @@ namespace moving_text_game
                 lblMove.Text = ">----";
             }
         }
-
-
-        
+ 
         public void OnProcessExit(object sender, EventArgs e)
         {
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
@@ -332,7 +328,6 @@ namespace moving_text_game
             }
         }
 
-
         // game started checker
         public void gameStartCheck_Tick(object sender, EventArgs e)
         {
@@ -341,8 +336,6 @@ namespace moving_text_game
                 gameStarted.Text = "GAME STARTED!";
             }
         }
-        
-
 
         // menu strip objects
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
@@ -394,9 +387,9 @@ namespace moving_text_game
             Controls[x].BackColor = Color.Transparent;
         }
 
-// exit button and comfirmation
+        // exit button and comfirmation
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { 
             DialogResult r = MessageBox.Show("Are you sure?", "Exit", (MessageBoxButtons.YesNo));
             if (r == DialogResult.Yes)
             {
@@ -430,9 +423,9 @@ namespace moving_text_game
                 lblMove.Top -= vert;
             }
 
-            rand.Text = "randomMovment: " + val + ", " + "randomTitle: " + ran;
+            rand.Text = "randomMovment: " + " " + val + " , " + "randomTitle: " + " " + ran;
             // debug text updating 
-            debug.Text = "" + "";
+            debug.Text = "  Debugging Enabled" + "";
         }
         // difficulty settings
         public void easyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -561,12 +554,9 @@ namespace moving_text_game
         }
 
         // about infomation
-        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-            System.Windows.Forms.MessageBox.Show("The Moving Text Chase" + "\n" +
-                "Version: " + greek + version1.ToString() + "." + version2.ToString() + optinalVersionLetter + " " + players +
-                "\n" + "Coded by : Antony Sedgewick");
+            System.Windows.Forms.MessageBox.Show(mainTitleText + "\n" + "Coded by : Antony Sedgewick");
         }
 
         private void viewChanglogToolStripMenuItem_Click(object sender, EventArgs e)
