@@ -81,7 +81,7 @@ namespace moving_text_game
             //generates a random number upon load
             Random r = new Random();
             ran = r.Next(9);
-            ran = 8;
+            //ran = 8;
             if (ran == 0)
             {
                 this.Text = mainTitleText + set1[0];

@@ -1,0 +1,87 @@
+Alpha
+
+Version 0.1 
+came up with concept.
+created movment and mouse click detection.
+
+version 0.1b
+added changing graphics.
+added names to program.
+added score tracking.
+
+version 0.2
+
+added side to side graphics.
+added TextPlayer reseting.
+stopped TextPlayer getting score when not visable.
+added version number to program.
+added debug logs.
+added icon to program.
+
+Version 0.2b
+moved text score next to the mouse score.
+added names through text files.
+added wins text states and exiting the program.
+added startup alert for name changing.
+added seconds played.
+
+version 0.2c
+added alpha and beta controls.
+added alpha or beta to the title of the form.
+added colour controls to form and text.
+changed the way the scoring system works so that names can be as long as the player(s) want.
+changed the way the greek version works, meaning it now has 3 states.
+added new anti-cheat system to all the text on screen(text dissapears for 1 sec).
+
+Version 0.2d
+changed the way the greek version system works again.
+changed it so that the timer & textScore upcount do not start until the player has moved.(game start)
+added a game started checker(easily used to start the scoring).
+added code to be used later to auto reset the text player(commented currently).
+added 2 new colour schemes(Red, Purple).
+
+Version 0.3 22/10/2013
+added options menu for colour changing and anti cheat for this system.
+commented out the popup at the beginning for changing names, will use another form later.
+made it so the game can be started by either player. (the mouse can start the game by clicking the text player).
+
+Version 0.3b 31/10/2013
+added extra debugging tools for cheating and colour changing. 
+added the beginnings of name changing controls, but they have not yet been implimented.
+
+Version 0.3bSP 5/11/13
+started single player fork(added random text movment). 
+added credits. 
+added difficulty.
+added extra debugging, and enabling options.
+added instructions on startup and ingame.
+changed the version label so its part of the debugging. 
+
+Version 0.4 12/11/13
+officaly now using this as my project.
+added 1&2 player switching to the same project.
+added name changing forms and completed move to new project.
+
+version 0.4b 14/11/13
+name changing is now working but only with a program restart.
+changed instructions depending on the number of players.
+started on change to the way that colouring works.
+
+Version 0.4c 19/11/13
+sorted changlog viewing.
+started working from GIT(will hopefully continue to).
+changed titles to using arrays, hopefully making witty titles easier to impliment.
+sutble changes to the code making it a little less bloated.
+added the ability to view the current names and who they are assigned to.
+fixed typo on about screen.
+added extra debugging.
+
+Version 0.4d 24/11/13
+removed reseting of names.
+fixed name forms not using new locations.
+got an on exit method working, and a stats text file outlined, but its not yet working.
+
+Version 0.5 25/11/13
+using .stor files now for data storage
+
+
