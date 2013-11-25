@@ -80,8 +80,8 @@ namespace moving_text_game
             // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(8);
-            //ran = ;
+            ran = r.Next(9);
+            ran = 8;
             if (ran == 0)
             {
                 this.Text = mainTitleText + set1[0];
@@ -113,6 +113,10 @@ namespace moving_text_game
             if (ran == 7)
             {
                 this.Text = mainTitleText + set1[7];
+            }
+            if (ran == 8)
+            {
+                this.Text = mainTitleText + set1[8];
             }
             //picks out all the label and menustrip controls, then sets their colours
             for (int x = 0; x < Controls.Count; x++)
