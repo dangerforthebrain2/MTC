@@ -11,7 +11,6 @@ using System.Threading;
 using System.IO;
 using Forms;
 
-
 namespace moving_text_game
 {
     public partial class Form1 : Form
@@ -49,7 +48,7 @@ namespace moving_text_game
        String textLeft = ">----";
        String textRight = "----<";
        //all initial stats
-       String stats = System.IO.File.ReadAllText("..\\..\\stats.txt");
+       String stats = System.IO.File.ReadAllText("..\\..\\stats.stor");
        int played, txtWin, mouWin;
        
        
@@ -64,8 +63,8 @@ namespace moving_text_game
             //using this string to shortening the title
             String mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
             //names & changlog contents loading
-            mouse = System.IO.File.ReadAllText("..\\..\\mouseName.txt");
-            text = System.IO.File.ReadAllText("..\\..\\textName.txt");
+            mouse = System.IO.File.ReadAllText("..\\..\\mouseName.stor");
+            text = System.IO.File.ReadAllText("..\\..\\textName.stor");
             //setting the intial text of the text player
             lblMove.Text = "Click on me!";
             // sets the version, names of players, and shows a message box
@@ -74,7 +73,7 @@ namespace moving_text_game
             label2.Text = text + "'s" + " Score: ";
             label3.Text = mouse + "'s" + " Score: ";
 
-            TextReader tr = new StreamReader("..\\..\\titles.txt");
+            TextReader tr = new StreamReader("..\\..\\titles.stor");
             titles = tr.ReadToEnd();
             tr.Close();
             String[] set1 = titles.Split('\n');
@@ -170,18 +169,17 @@ namespace moving_text_game
 
         public void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
             // position reset control
             if (e.KeyCode == Keys.X)
             {
                 System.Threading.Thread.Sleep(100);
                 lblMove.Left = this.Width / 2 - lblMove.Width / 2;
                 lblMove.Visible = true;
-                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine(DateTime.Now + " Text Reset");
                 tr1.Close();
-                String actlog = System.IO.File.ReadAllText("..\\..\\ActionsLog.txt");
+                String actlog = System.IO.File.ReadAllText("..\\..\\ActionsLog.stor");
                 this.lblMove.Location = new Point(457, 305);
             }
             if (movment.Enabled == false || players == "MP")
@@ -191,7 +189,7 @@ namespace moving_text_game
                 {
                     lblMove.Left -= 15;
                     lblMove.Text = textLeft;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteLine(DateTime.Now + " Moved Left");
                     tr1.Close();
@@ -201,7 +199,7 @@ namespace moving_text_game
                 {
                     lblMove.Left += 15;
                     lblMove.Text = textRight;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteLine(DateTime.Now + " Moved Right");
                     tr1.Close();
@@ -210,7 +208,7 @@ namespace moving_text_game
                 if (e.KeyCode == Keys.Down)
                 {
                     lblMove.Top += 17;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteLine(DateTime.Now + " Moved Up");
                     tr1.Close();
@@ -218,25 +216,26 @@ namespace moving_text_game
                 if (e.KeyCode == Keys.Up)
                 {
                     lblMove.Top -= 17;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteLine(DateTime.Now + " Moved Down");
                     tr1.Close();
                 }
             }
         }
+        //viewing of the titles
         private void viewTitlesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(titles);
         }
-
+        //the moving text player
         public void lblMove_Click(object sender, EventArgs e)
         {
             //mouse click detection and mouse score upcount
             score ++;
             lblMove.Visible = false;
             label3.Text =   mouse + "'s" + " Score: " + score.ToString();
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
             Debug.Listeners.Add(tr1);
             Debug.WriteLine(DateTime.Now + " Text Hit With Mouse");
             tr1.Close();
@@ -256,7 +255,7 @@ namespace moving_text_game
         
         public void OnProcessExit(object sender, EventArgs e)
         {
-                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog"));
+                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine(DateTime.Now + " Game Closed");
                 tr1.Close();
@@ -299,7 +298,7 @@ namespace moving_text_game
                 // debugging score output
                 if (score != 0)
                 {
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.txt"));
+                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.stor"));
                     Debug.Listeners.Add(tr1);
                     Debug.WriteIf(score2 != 0, DateTime.Now + " TextScore  is: " + score2.ToString() + Environment.NewLine);
                     Debug.WriteIf(score != 0, DateTime.Now + " MouseScore is: " + score.ToString() + Environment.NewLine);
@@ -322,7 +321,7 @@ namespace moving_text_game
                 timeCount.Visible = true;
                 time++;
                 timeCount.Text = "Seconds Played: " + time.ToString();
-                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.txt"));
+                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.stor"));
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine("Seconds Played " + time);
                 tr1.Close();
@@ -346,7 +345,7 @@ namespace moving_text_game
         {
             colorDialog1.ShowDialog();
             this.BackColor = colorDialog1.Color;
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
             Debug.Listeners.Add(tr1);
             Debug.WriteLine("Setting Background Colour to: " + colorDialog1.Color);
             tr1.Close();
@@ -367,7 +366,7 @@ namespace moving_text_game
                     Controls[x].BackColor = colorDialog1.Color;
                     Controls[x].ForeColor = colorDialog2.Color;
                 }
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
             Debug.Listeners.Add(tr1);
             Debug.WriteLine("Setting Text Colours to: " + colorDialog1.Color);
             tr1.Close();
@@ -510,7 +509,7 @@ namespace moving_text_game
             score = 0;
             score2 = 0;
             this.lblMove.Location = new Point(457, 305);
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
             Debug.Listeners.Add(tr1);
             Debug.WriteLine(DateTime.Now + " Changed to MP");
             tr1.Close();
@@ -530,7 +529,7 @@ namespace moving_text_game
             score = 0;
             score2 = 0;
             this.lblMove.Location = new Point(457, 305);
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.txt"));
+            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
             Debug.Listeners.Add(tr1);
             Debug.WriteLine(DateTime.Now + " Changed to SP");
             tr1.Close();

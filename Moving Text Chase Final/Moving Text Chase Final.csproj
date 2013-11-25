@@ -140,6 +140,8 @@
     <EmbeddedResource Include="textName.resx">
       <DependentUpon>textName.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ActionsLog.stor" />
+    <None Include="mouseName.stor" />
     <None Include="Moving Text Chase Final_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -151,16 +153,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="rands.stor" />
+    <None Include="ScoreLog.stor" />
+    <None Include="stats.stor" />
+    <None Include="textName.stor" />
+    <None Include="titles.stor" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ActionsLog.txt" />
     <Content Include="Changelog.txt" />
-    <Content Include="mouseName.txt" />
-    <Content Include="rands.txt" />
-    <Content Include="ScoreLog.txt" />
-    <Content Include="stats.txt" />
-    <Content Include="textName.txt" />
-    <Content Include="titles.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
