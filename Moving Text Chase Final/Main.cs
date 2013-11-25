@@ -24,9 +24,9 @@ namespace moving_text_game
        int score, score2, time, ran = 0;
        // Version Numbers(change these to change the version number)
        int version1 = 0;
-       int version2 = 4;
+       int version2 = 5;
        // optinal version letter, when and full number interation is not approprate
-       String optinalVersionLetter = "d";
+       String optinalVersionLetter = "";
        // greek version (leave blank for full)
        String greek = "Alpha ";
        //default movment values
