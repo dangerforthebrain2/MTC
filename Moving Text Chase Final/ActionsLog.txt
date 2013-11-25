@@ -128,3 +128,59 @@ Setting Text Colours to: Color [Black]
 24/11/2013 23:09:17 Moved Down
 24/11/2013 23:09:17 Moved Right
 24/11/2013 23:10:27 Changed to MP
+25/11/2013 12:12:09 Changed to MP
+25/11/2013 12:12:11 Text Hit With Mouse
+25/11/2013 12:12:13 Text Reset
+25/11/2013 12:12:13 Text Hit With Mouse
+25/11/2013 12:12:13 Text Reset
+25/11/2013 12:12:14 Text Reset
+25/11/2013 12:12:14 Text Hit With Mouse
+25/11/2013 12:12:14 Text Reset
+25/11/2013 12:12:14 Text Reset
+25/11/2013 12:12:14 Text Hit With Mouse
+25/11/2013 12:12:14 Text Reset
+25/11/2013 12:12:14 Text Reset
+25/11/2013 12:12:14 Text Hit With Mouse
+25/11/2013 12:12:15 Text Reset
+25/11/2013 12:12:15 Text Reset
+25/11/2013 12:12:15 Text Hit With Mouse
+25/11/2013 12:12:15 Text Reset
+25/11/2013 12:12:15 Text Reset
+25/11/2013 12:12:15 Text Hit With Mouse
+25/11/2013 12:12:15 Text Reset
+25/11/2013 12:12:15 Text Reset
+25/11/2013 12:12:15 Text Hit With Mouse
+25/11/2013 12:12:16 Text Reset
+25/11/2013 12:12:16 Text Reset
+25/11/2013 12:12:16 Text Hit With Mouse
+25/11/2013 12:12:16 Text Reset
+25/11/2013 12:12:16 Text Hit With Mouse
+25/11/2013 12:12:16 Text Reset
+25/11/2013 12:12:16 Text Reset
+25/11/2013 12:12:16 Text Hit With Mouse
+25/11/2013 12:12:17 Text Reset
+25/11/2013 12:12:17 Text Reset
+25/11/2013 12:12:17 Text Hit With Mouse
+25/11/2013 12:12:17 Text Reset
+25/11/2013 12:12:17 Text Reset
+25/11/2013 12:12:17 Text Hit With Mouse
+25/11/2013 12:12:17 Text Reset
+25/11/2013 12:12:17 Text Reset
+25/11/2013 12:12:18 Text Hit With Mouse
+25/11/2013 12:12:18 Text Reset
+25/11/2013 12:12:18 Text Reset
+25/11/2013 12:12:18 Text Hit With Mouse
+25/11/2013 12:12:18 Text Reset
+25/11/2013 12:12:18 Text Hit With Mouse
+25/11/2013 12:12:18 Text Reset
+25/11/2013 12:12:18 Text Reset
+25/11/2013 12:12:19 Text Hit With Mouse
+25/11/2013 12:12:19 Text Reset
+25/11/2013 12:12:19 Text Reset
+25/11/2013 12:12:19 Text Hit With Mouse
+25/11/2013 12:12:19 Text Reset
+25/11/2013 12:12:19 Text Reset
+25/11/2013 12:12:19 Text Hit With Mouse
+25/11/2013 12:12:19 Text Reset
+25/11/2013 12:12:20 Text Reset
+25/11/2013 12:12:20 Text Hit With Mouse

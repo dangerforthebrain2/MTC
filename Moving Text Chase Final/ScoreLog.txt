@@ -1129,3 +1129,28 @@ Seconds Played 2
 Seconds Played 1
 Seconds Played 1
 Seconds Played 2
+Seconds Played 1
+Seconds Played 2
+Seconds Played 3
+Seconds Played 1
+Seconds Played 2
+25/11/2013 12:12:11 MouseScore is: 1
+Seconds Played 3
+Seconds Played 4
+Seconds Played 5
+Seconds Played 6
+Seconds Played 7
+25/11/2013 12:12:17 TextScore  is: 1
+25/11/2013 12:12:17 MouseScore is: 11
+Seconds Played 8
+Seconds Played 9
+Seconds Played 10
+Seconds Played 11
+Seconds Played 12
+Seconds Played 13
+25/11/2013 12:12:22 TextScore  is: 1
+25/11/2013 12:12:22 MouseScore is: 20
+Seconds Played 1
+Seconds Played 1
+Seconds Played 2
+Seconds Played 3

@@ -25,7 +25,6 @@ namespace moving_text_game
        int score, score2, time, ran = 0;
        // Version Numbers(change these to change the version number)
        int version1 = 0;
-       int partridgeInAPearTree = 0;
        int version2 = 4;
        // optinal version letter, when and full number interation is not approprate
        String optinalVersionLetter = "d";
@@ -49,6 +48,10 @@ namespace moving_text_game
        // the look of the text player
        String textLeft = ">----";
        String textRight = "----<";
+       //all initial stats
+       String stats = System.IO.File.ReadAllText("..\\..\\stats.txt");
+       int played, txtWin, mouWin;
+       
        
  
         
@@ -59,7 +62,7 @@ namespace moving_text_game
         public void Form1_Load(object sender, EventArgs e)
         {
             //using this string to shortening the title
-            String mainTitleText = "The Moving Text Chase " + greek + "Version: " + partridgeInAPearTree + "." + version2 + optinalVersionLetter + players;
+            String mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
             //names & changlog contents loading
             mouse = System.IO.File.ReadAllText("..\\..\\mouseName.txt");
             text = System.IO.File.ReadAllText("..\\..\\textName.txt");
@@ -68,12 +71,12 @@ namespace moving_text_game
             // sets the version, names of players, and shows a message box
             lblVersion.Text = "Version: " + version1 + "." + version2 + optinalVersionLetter;
             //load text from filesystem
-            TextReader tr = new StreamReader("..\\..\\titles.txt");
-            titles = tr.ReadToEnd();
-            tr.Close();
             label2.Text = text + "'s" + " Score: ";
             label3.Text = mouse + "'s" + " Score: ";
 
+            TextReader tr = new StreamReader("..\\..\\titles.txt");
+            titles = tr.ReadToEnd();
+            tr.Close();
             String[] set1 = titles.Split('\n');
             // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
@@ -112,7 +115,7 @@ namespace moving_text_game
             {
                 this.Text = mainTitleText + set1[7];
             }
-
+            //picks out all the label and menustrip controls, then sets their colours
             for (int x = 0; x < Controls.Count; x++)
             {
                 if (Controls[x].GetType() == typeof(MenuStrip))
@@ -129,8 +132,11 @@ namespace moving_text_game
                 }
             }
             this.BackColor = Color.White;
-            //calling the class below
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
+            String[] set2 = stats.Split('\n');
+            played = Int16.Parse(set2[0]);
+            txtWin = Int16.Parse(set2[1]);
+            mouWin = Int16.Parse(set2[2]);
         }
         //debug display options
         public void enableToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,12 +254,17 @@ namespace moving_text_game
 
 
         
-        static void OnProcessExit(object sender, EventArgs e)
+        public void OnProcessExit(object sender, EventArgs e)
         {
                 TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog"));
                 Debug.Listeners.Add(tr1);
                 Debug.WriteLine(DateTime.Now + " Game Closed");
                 tr1.Close();
+        if (score == 20)
+        {
+            txtWin++;
+            
+        }
         }
 
         public void TextScoreTick_Tick(object sender, EventArgs e)

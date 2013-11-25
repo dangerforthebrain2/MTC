@@ -158,6 +158,7 @@
     <Content Include="mouseName.txt" />
     <Content Include="rands.txt" />
     <Content Include="ScoreLog.txt" />
+    <Content Include="stats.txt" />
     <Content Include="textName.txt" />
     <Content Include="titles.txt" />
   </ItemGroup>
