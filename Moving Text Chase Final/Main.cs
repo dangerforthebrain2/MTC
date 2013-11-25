@@ -78,7 +78,7 @@ namespace moving_text_game
             // setting the title, stating the name, wether its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(7);
+            ran = r.Next(8);
 
             if (ran == 0)
             {
@@ -107,6 +107,10 @@ namespace moving_text_game
             if (ran == 6)
             {
                 this.Text = mainTitleText + set1[6];
+            }
+            if (ran == 7)
+            {
+                this.Text = mainTitleText + set1[0];
             }
 
             for (int x = 0; x < Controls.Count; x++)
