@@ -49,15 +49,19 @@ namespace moving_text_game
        String textRight = "----<";
        //all initial stats
        String stats = System.IO.File.ReadAllText("..\\..\\stats.stor");
-       //initial stats values(I suspect this may be a problem)
+       String mainTitleText;
+       //stats stuff
        int played, txtWin, mouWin;
-       String mainTitleText; 
+       String[] set1;
+       String[] set2;
+
         public Form1()
         {
             InitializeComponent();
         }
         public void Form1_Load(object sender, EventArgs e)
        {
+            played++;
             //using this string to shortening the title
             mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
             //names & changlog contents loading
@@ -74,7 +78,7 @@ namespace moving_text_game
             TextReader tr = new StreamReader("..\\..\\titles.stor");
             titles = tr.ReadToEnd();
             tr.Close();
-            String[] set1 = titles.Split('\n');
+            set1 = titles.Split('\n');
             // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
@@ -134,7 +138,8 @@ namespace moving_text_game
             }
             this.BackColor = Color.White;
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
-            String[] set2 = stats.Split('\n');
+
+            set2 = stats.Split('\n');
             played = Int16.Parse(set2[0]);
             txtWin = Int16.Parse(set2[1]);
             mouWin = Int16.Parse(set2[2]);
@@ -261,9 +266,14 @@ namespace moving_text_game
                 tr1.Close();
         if (score == 20)
         {
-            txtWin++;
-            
+         mouWin++;
+         //set2[1] = mouWin.ToString;
         }
+        if (score2 == 30)
+        {
+            txtWin++;
+        }
+
         }
 
         public void TextScoreTick_Tick(object sender, EventArgs e)
@@ -425,7 +435,7 @@ namespace moving_text_game
 
             rand.Text = "randomMovment: " + " " + val + " , " + "randomTitle: " + " " + ran;
             // debug text updating 
-            debug.Text = "  Debugging Enabled" + "";
+            debug.Text = "  Debugging Enabled" + " " + played + " " + txtWin + " " + mouWin + " ";
         }
         // difficulty settings
         public void easyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -496,7 +506,7 @@ namespace moving_text_game
         {
             movment.Enabled = false;
             players = "MP";
-            debug.Text = "Players: " + players;
+          //debug.Text = "Players: " + players;
             lblTop.Text = "Press X To Reset the Second Player's postion";
             if (rand.Visible == true)
             {
