@@ -1,4 +1,4 @@
 ﻿reset button wipes name files
 score for AI in SP dosn't detect win
 color schemes don't work
-statscan be read only at the moment
+stats can be read only at the moment
