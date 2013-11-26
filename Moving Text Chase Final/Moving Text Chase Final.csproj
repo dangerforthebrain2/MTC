@@ -160,6 +160,7 @@
     <None Include="titles.stor" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bugs.txt" />
     <Content Include="Changelog.txt" />
   </ItemGroup>
   <ItemGroup>
