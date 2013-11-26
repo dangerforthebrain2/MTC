@@ -2,3 +2,4 @@
 score for AI in SP dosn't detect win
 color schemes don't work
 stats can be read only at the moment
+game beatble on impossible with cheats

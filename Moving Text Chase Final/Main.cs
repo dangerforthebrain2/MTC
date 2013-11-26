@@ -61,6 +61,8 @@ namespace moving_text_game
         }
         public void Form1_Load(object sender, EventArgs e)
        {
+            colorDialog1.Color = Color.Black;
+            colorDialog2.Color = Color.White;
             played++;
             //using this string to shortening the title
             mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
@@ -143,7 +145,7 @@ namespace moving_text_game
             this.BackColor = Color.White;
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
 
-            set2 = stats.Split('\n');
+            set2 = stats.Split(',');
             played = Int16.Parse(set2[0]);
             txtWin = Int16.Parse(set2[1]);
             mouWin = Int16.Parse(set2[2]);
@@ -276,6 +278,9 @@ namespace moving_text_game
         if (score2 == 30)
         {
             txtWin++;
+            TextWriter tw = new StreamWriter("..\\..\\stats.stor");
+            tw.Write(played + "," + txtWin + "," + mouWin);
+            tw.Close();
         }
 
         }
@@ -360,13 +365,35 @@ namespace moving_text_game
             Debug.Listeners.Add(tr1);
             Debug.WriteLine("Setting Background Colour to: " + colorDialog1.Color);
             tr1.Close();
+            if (colorDialog1.Color == colorDialog2.Color)
+            { // anti cheat system for colour
+                MessageBox.Show("You have been caught cheating!", "Cheat Detected");
+                this.BackColor = System.Drawing.Color.White;
+                label1.BackColor = System.Drawing.Color.Transparent;
+
+                for (int x = 0; x < Controls.Count; x++)
+                    if (Controls[x].GetType() == typeof(Label))
+                    {
+                        Controls[x].BackColor = Color.Transparent;
+                        Controls[x].ForeColor = Color.Black;
+                    }
+                for (int x = 0; x < Controls.Count; x++)
+                    if (Controls[x].GetType() == typeof(MenuStrip))
+                    {
+                        Controls[x].BackColor = Color.Transparent;
+                        Controls[x].ForeColor = Color.Black;
+                    }
+                Debug.Listeners.Add(tr1);
+                Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
+                tr1.Close();
+            }
         }
 
         public void textToolStripMenuItem_Click(object sender, EventArgs e)
         { // colour setting
             colorDialog2.ShowDialog();
             for (int x = 0; x < Controls.Count; x++)
-                if (Controls[x].GetType() == typeof(Menu))
+                if (Controls[x].GetType() == typeof(MenuStrip))
                 {
                     Controls[x].BackColor = colorDialog1.Color;
                     Controls[x].ForeColor = colorDialog2.Color;
@@ -381,7 +408,7 @@ namespace moving_text_game
             Debug.Listeners.Add(tr1);
             Debug.WriteLine("Setting Text Colours to: " + colorDialog1.Color);
             tr1.Close();
-            if (colorDialog1.Color == colorDialog2.Color)
+            if (colorDialog1.Color == colorDialog2.Color )
             { // anti cheat system for colour
                 MessageBox.Show("You have been caught cheating!", "Cheat Detected");
                 this.BackColor = System.Drawing.Color.White;
