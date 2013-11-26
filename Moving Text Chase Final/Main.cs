@@ -61,11 +61,12 @@ namespace moving_text_game
         }
         public void Form1_Load(object sender, EventArgs e)
        {
+            players = "SP";
             colorDialog1.Color = Color.Black;
             colorDialog2.Color = Color.White;
             played++;
             //using this string to shortening the title
-            mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter + players;
+            mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter;
             //names & changlog contents loading
             mouse = System.IO.File.ReadAllText("..\\..\\mouseName.stor");
             text = System.IO.File.ReadAllText("..\\..\\textName.stor");
