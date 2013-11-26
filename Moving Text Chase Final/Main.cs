@@ -273,16 +273,15 @@ namespace moving_text_game
         if (score == 20)
         {
          mouWin++;
-         //set2[1] = mouWin.ToString;
         }
         if (score2 == 30)
         {
             txtWin++;
-            TextWriter tw = new StreamWriter("..\\..\\stats.stor");
-            tw.Write(played + "," + txtWin + "," + mouWin);
-            tw.Close();
         }
-
+        played++;
+        TextWriter tw = new StreamWriter("..\\..\\stats.stor");
+        tw.Write(played + "," + txtWin + "," + mouWin + "," + time + "," + players);
+        tw.Close();
         }
 
         public void TextScoreTick_Tick(object sender, EventArgs e)
