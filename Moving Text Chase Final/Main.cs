@@ -465,7 +465,7 @@ namespace moving_text_game
 
             rand.Text = "randomMovment: " + " " + val + " , " + "randomTitle: " + " " + ran;
             // debug text updating 
-            debug.Text = "  Debugging Enabled" + " " + played + " " + txtWin + " " + mouWin + " ";
+            debug.Text = "  Debugging Enabled" + " " + played + " " + txtWin + " " + mouWin + " " + time + " " + players;
         }
         // difficulty settings
         public void easyToolStripMenuItem_Click(object sender, EventArgs e)
