@@ -54,6 +54,8 @@ namespace moving_text_game
        int played, txtWin, mouWin;
        String[] set1;
        String[] set2;
+       // debugging var
+       int bugger = 1;
 
         public Form1()
         {
@@ -85,8 +87,8 @@ namespace moving_text_game
             // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(11);
-            //ran = 10;
+            ran = r.Next(12);
+            //ran = 11;
             if (ran == 0)
             {
                 this.Text = mainTitleText + set1[0];
@@ -131,6 +133,10 @@ namespace moving_text_game
             {
                 this.Text = mainTitleText + set1[10];
             }
+            if (ran == 11)
+            {
+                this.Text = mainTitleText + set1[11];
+            }
             //picks out all the label and menustrip controls, then sets their colours
             for (int x = 0; x < Controls.Count; x++)
             {
@@ -158,28 +164,30 @@ namespace moving_text_game
         //debug display options
         public void enableToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            bugger = 1;
             gameStarted.Visible = true;
             rand.Visible = true;
             debug.Visible = true;
             lblVersion.Visible = true;
             viewTitlesToolStripMenuItem.Visible = true;
             colorSchemesToolStripMenuItem.Visible = true;
-            if (enableToolStripMenuItem.Visible == false)
+            if (bugger == 1)
             {
-                disableToolStripMenuItem.Visible = true;
+                disableToolStripMenuItem.Visible = false;
             }
 
         }
 
         public void disableToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            bugger = 0;
             gameStarted.Visible = false;
             rand.Visible = false;
             debug.Visible = false;
             lblVersion.Visible = false;
             viewTitlesToolStripMenuItem.Visible = false;
             colorSchemesToolStripMenuItem.Visible = false;
-            if (disableToolStripMenuItem.Visible == false)
+            if (bugger == 0)
             {
                 enableToolStripMenuItem.Visible = true;
             }
