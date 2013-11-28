@@ -1,3 +1,4 @@
 ﻿reset button wipes name files
-color schemes don't work
-game beatble on impossible with cheats
+color schemes don't work.
+game beatble on impossible with cheats.
+after switching to multiplayer, you can't switch back.

@@ -82,6 +82,7 @@ fixed name forms not using new locations.
 got an on exit method working, and a stats text file outlined, but its not yet working.
 
 Version 0.5 25/11/13
-using .stor files now for data storage
+using .stor files now for data storage.
+minor changes to the debugging menu.
 
 

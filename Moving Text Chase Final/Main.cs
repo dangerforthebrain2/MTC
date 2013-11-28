@@ -67,6 +67,8 @@ namespace moving_text_game
             colorDialog1.Color = Color.Black;
             colorDialog2.Color = Color.White;
             played++;
+            disableToolStripMenuItem.Enabled = false;
+            playersToolStripMenuItem1.Enabled = false;
             //using this string to shortening the title
             mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter;
             //names & changlog contents loading
@@ -173,7 +175,8 @@ namespace moving_text_game
             colorSchemesToolStripMenuItem.Visible = true;
             if (bugger == 1)
             {
-                disableToolStripMenuItem.Visible = false;
+                disableToolStripMenuItem.Enabled = true;
+                enableToolStripMenuItem.Enabled = false;
             }
 
         }
@@ -189,7 +192,8 @@ namespace moving_text_game
             colorSchemesToolStripMenuItem.Visible = false;
             if (bugger == 0)
             {
-                enableToolStripMenuItem.Visible = true;
+                enableToolStripMenuItem.Enabled = true;
+                disableToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -545,7 +549,7 @@ namespace moving_text_game
 
         }
         //swtiches for SP and MP
-        public void playerToolStripMenuItem_Click(object sender, EventArgs e)
+        public void playerToolStripMenuItem_Click(object sender, EventArgs e)//MP
         {
             movment.Enabled = false;
             players = "MP";
@@ -563,9 +567,16 @@ namespace moving_text_game
             Debug.Listeners.Add(tr1);
             Debug.WriteLine(DateTime.Now + " Changed to MP");
             tr1.Close();
+            if (players == "MP")
+            {
+                playerToolStripMenuItem.Enabled = false;
+                playersToolStripMenuItem.Enabled = true;
+                difficultyToolStripMenuItem.Enabled = false;
+
+            }
         }
 
-        public void playersToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void playersToolStripMenuItem1_Click(object sender, EventArgs e)//SP
         {
             movment.Enabled = true;
             players = "SP";
@@ -583,6 +594,13 @@ namespace moving_text_game
             Debug.Listeners.Add(tr1);
             Debug.WriteLine(DateTime.Now + " Changed to SP");
             tr1.Close();
+            if (players == "SP")
+            { //
+                playersToolStripMenuItem1.Enabled = false;
+                playerToolStripMenuItem.Enabled = true;
+                difficultyToolStripMenuItem.Enabled = true;
+
+            }
             
         }
         //name changing
