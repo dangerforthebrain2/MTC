@@ -569,8 +569,8 @@ namespace moving_text_game
             tr1.Close();
             if (players == "MP")
             {
+                playersToolStripMenuItem1.Enabled = true;
                 playerToolStripMenuItem.Enabled = false;
-                playersToolStripMenuItem.Enabled = true;
                 difficultyToolStripMenuItem.Enabled = false;
 
             }
