@@ -84,8 +84,8 @@ namespace moving_text_game
             // sets the version, names of players, and shows a message box
             lblVersion.Text = "Version: " + version1 + "." + version2 + optinalVersionLetter;
             //load text from filesystem
-            label2.Text = text + "'s" + " Score: ";
-            label3.Text = mouse + "'s" + " Score: ";
+            label2.Text = text + "'s" + " Score: 0";
+            label3.Text = mouse + "'s" + " Score: 0";
 
             TextReader tr = new StreamReader("..\\..\\titles.stor");
             titles = tr.ReadToEnd();
@@ -178,7 +178,7 @@ namespace moving_text_game
             }
             this.BackColor = Color.White;
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
-
+            //stats splitting and array assigning.
             set2 = stats.Split(',');
             played = Int16.Parse(set2[0]);
             txtWin = Int16.Parse(set2[1]);
