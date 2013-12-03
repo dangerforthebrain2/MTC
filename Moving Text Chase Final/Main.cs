@@ -50,11 +50,11 @@ namespace moving_text_game
        //all initial stats
        String stats = System.IO.File.ReadAllText("..\\..\\stats.stor");
        String mainTitleText;
-       //stats stuff
+       //stats stuff 
        int played, txtWin, mouWin;
        String[] set1;
        String[] set2;
-       // debugging var
+        //debug enable/disable var
        int bugger = 1;
 
         public Form1()
@@ -63,10 +63,14 @@ namespace moving_text_game
         }
         public void Form1_Load(object sender, EventArgs e)
        {
+            // sets intial amount of players
             players = "SP";
+            // sets initial background colour
             colorDialog1.Color = Color.Black;
             colorDialog2.Color = Color.White;
+            // adds to the "played Stat"
             played++;
+            //disables selected options in the menu
             disableToolStripMenuItem.Enabled = false;
             playersToolStripMenuItem1.Enabled = false;
             //using this string to shortening the title
@@ -645,6 +649,12 @@ namespace moving_text_game
         {
             fm3 = new Schemes();
             fm3.Show();
+        }
+
+        private void viewStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Times Played: " + played + "\n" + "Mouse Wins: " + mouWin
+                + "\n" + "Text Wins: " + txtWin);
         }
     }
 }

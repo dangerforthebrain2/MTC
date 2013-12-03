@@ -87,5 +87,7 @@ minor changes to the debugging menu.
 debugging enable becomes greyed out when debugging is enabled and vice versa.
 players work the same as debugging menu.
 addded 2 new titles.
+changed one title to a more suitable title.
+added stat viewing.
 
 

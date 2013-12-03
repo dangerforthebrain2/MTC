@@ -75,6 +75,7 @@
             this.movment = new System.Windows.Forms.Timer(this.components);
             this.rand = new System.Windows.Forms.Label();
             this.debug = new System.Windows.Forms.Label();
+            this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -342,7 +343,8 @@
             this.aboutToolStripMenuItem1,
             this.viewTitlesToolStripMenuItem,
             this.viewChanglogToolStripMenuItem,
-            this.currentNamesToolStripMenuItem});
+            this.currentNamesToolStripMenuItem,
+            this.viewStatisticsToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.aboutToolStripMenuItem.Text = "Info";
@@ -388,14 +390,14 @@
             // mouseToolStripMenuItem
             // 
             this.mouseToolStripMenuItem.Name = "mouseToolStripMenuItem";
-            this.mouseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mouseToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.mouseToolStripMenuItem.Text = "Mouse";
             this.mouseToolStripMenuItem.Click += new System.EventHandler(this.mouseToolStripMenuItem_Click);
             // 
             // textToolStripMenuItem1
             // 
             this.textToolStripMenuItem1.Name = "textToolStripMenuItem1";
-            this.textToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.textToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.textToolStripMenuItem1.Text = "Text";
             this.textToolStripMenuItem1.Click += new System.EventHandler(this.textToolStripMenuItem1_Click);
             // 
@@ -430,6 +432,13 @@
             this.debug.TabIndex = 12;
             this.debug.Text = "debugging output";
             this.debug.Visible = false;
+            // 
+            // viewStatisticsToolStripMenuItem
+            // 
+            this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
+            this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.viewStatisticsToolStripMenuItem.Text = "View Statistics";
+            this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -507,6 +516,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewChanglogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentNamesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colorSchemesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewStatisticsToolStripMenuItem;
     }
 }
 
