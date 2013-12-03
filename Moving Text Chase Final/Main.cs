@@ -91,51 +91,51 @@ namespace moving_text_game
             Random r = new Random();
             ran = r.Next(12);
             //ran = 11;
-            if (ran == 0)
+            if (ran == 0) //batteries not included
             {
                 this.Text = mainTitleText + set1[0];
             }
-            if (ran == 1)
+            if (ran == 1) //I saw an owl!
             {
                 this.Text = mainTitleText + set1[1];
             }
-            if (ran == 2)
+            if (ran == 2) //We all live in a yellow submarine!
             {
                 this.Text = mainTitleText + set1[2];
             }
-            if (ran == 3)
+            if (ran == 3) //Get off my land!
             {
                 this.Text = mainTitleText + set1[3];
             }
-            if (ran == 4)
+            if (ran == 4) //Go away, I'm busy playing Minecraft!
             {
                 this.Text = mainTitleText + set1[4];
             }
-            if (ran == 5)
+            if (ran == 5) // Super Mega Amazing Ultimate Gold Turbo Edition!
             {
                 this.Text = mainTitleText + set1[5];
             }
-            if (ran == 6)
+            if (ran == 6) //Off the chain!
             {
                 this.Text = mainTitleText + set1[6];
             }
-            if (ran == 7)
+            if (ran == 7) //Summon the Eater Of Worlds!
             {
                 this.Text = mainTitleText + set1[7];
             }
-            if (ran == 8)
+            if (ran == 8) //Cthulu Played once!
             {
                 this.Text = mainTitleText + set1[8];
             }
-            if (ran == 9)
+            if (ran == 9) //Get a glass its running away!
             {
                 this.Text = mainTitleText + set1[9];
             }
-            if (ran == 10)
+            if (ran == 10) //One Million dollars!
             {
                 this.Text = mainTitleText + set1[10];
             }
-            if (ran == 11)
+            if (ran == 11) //Dirty filthy traitors!
             {
                 this.Text = mainTitleText + set1[11];
             }

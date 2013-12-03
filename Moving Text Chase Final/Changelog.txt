@@ -84,5 +84,8 @@ got an on exit method working, and a stats text file outlined, but its not yet w
 Version 0.5 25/11/13
 using .stor files now for data storage.
 minor changes to the debugging menu.
+debugging enable becomes greyed out when debugging is enabled and vice versa.
+players work the same as debugging menu.
+addded 2 new titles.
 
 
