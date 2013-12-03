@@ -28,7 +28,7 @@ namespace moving_text_game
        // optinal version letter, when and full number interation is not approprate
        String optinalVersionLetter = "";
        // greek version (leave blank for full)
-       String greek = "Alpha ";
+       String greek = "Beta ";
        //default movment values
        int hoz = 12;
        int vert = 15;
@@ -73,6 +73,7 @@ namespace moving_text_game
             //disables selected options in the menu
             disableToolStripMenuItem.Enabled = false;
             playersToolStripMenuItem1.Enabled = false;
+            currentNamesToolStripMenuItem.Visible = false;
             //using this string to shortening the title
             mainTitleText = "The Moving Text Chase " + greek + "Version: " + version1 + "." + version2 + optinalVersionLetter;
             //names & changlog contents loading
@@ -177,6 +178,7 @@ namespace moving_text_game
             lblVersion.Visible = true;
             viewTitlesToolStripMenuItem.Visible = true;
             colorSchemesToolStripMenuItem.Visible = true;
+            currentNamesToolStripMenuItem.Visible = true;
             if (bugger == 1)
             {
                 disableToolStripMenuItem.Enabled = true;
@@ -194,6 +196,7 @@ namespace moving_text_game
             lblVersion.Visible = false;
             viewTitlesToolStripMenuItem.Visible = false;
             colorSchemesToolStripMenuItem.Visible = false;
+            currentNamesToolStripMenuItem.Visible = false;
             if (bugger == 0)
             {
                 enableToolStripMenuItem.Enabled = true;
@@ -209,11 +212,11 @@ namespace moving_text_game
                 System.Threading.Thread.Sleep(100);
                 lblMove.Left = this.Width / 2 - lblMove.Width / 2;
                 lblMove.Visible = true;
-                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-                Debug.Listeners.Add(tr1);
-                Debug.WriteLine(DateTime.Now + " Text Reset");
-                tr1.Close();
-                String actlog = System.IO.File.ReadAllText("..\\..\\ActionsLog.stor");
+                //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+                //Debug.Listeners.Add(tr1);
+                //Debug.WriteLine(DateTime.Now + " Text Reset");
+                //tr1.Close();
+                //String actlog = System.IO.File.ReadAllText("..\\..\\ActionsLog.stor");
                 this.lblMove.Location = new Point(457, 305);
             }
             if (movment.Enabled == false || players == "MP")
@@ -223,37 +226,37 @@ namespace moving_text_game
                 {
                     lblMove.Left -= 15;
                     lblMove.Text = textLeft;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-                    Debug.Listeners.Add(tr1);
-                    Debug.WriteLine(DateTime.Now + " Moved Left");
-                    tr1.Close();
+                    //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+                    //Debug.Listeners.Add(tr1);
+                    //Debug.WriteLine(DateTime.Now + " Moved Left");
+                    //tr1.Close();
                 }
 
                 if (e.KeyCode == Keys.Right)
                 {
                     lblMove.Left += 15;
                     lblMove.Text = textRight;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-                    Debug.Listeners.Add(tr1);
-                    Debug.WriteLine(DateTime.Now + " Moved Right");
-                    tr1.Close();
+                    //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+                    //Debug.Listeners.Add(tr1);
+                    //Debug.WriteLine(DateTime.Now + " Moved Right");
+                    //tr1.Close();
                 }
 
                 if (e.KeyCode == Keys.Down)
                 {
                     lblMove.Top += 17;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-                    Debug.Listeners.Add(tr1);
-                    Debug.WriteLine(DateTime.Now + " Moved Up");
-                    tr1.Close();
+                    //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+                    //Debug.Listeners.Add(tr1);
+                    //Debug.WriteLine(DateTime.Now + " Moved Up");
+                    //tr1.Close();
                 }
                 if (e.KeyCode == Keys.Up)
                 {
                     lblMove.Top -= 17;
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-                    Debug.Listeners.Add(tr1);
-                    Debug.WriteLine(DateTime.Now + " Moved Down");
-                    tr1.Close();
+                    //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+                    //Debug.Listeners.Add(tr1);
+                    //Debug.WriteLine(DateTime.Now + " Moved Down");
+                    //tr1.Close();
                 }
             }
         }
@@ -269,10 +272,10 @@ namespace moving_text_game
             score ++;
             lblMove.Visible = false;
             label3.Text =   mouse + "'s" + " Score: " + score.ToString();
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-            Debug.Listeners.Add(tr1);
-            Debug.WriteLine(DateTime.Now + " Text Hit With Mouse");
-            tr1.Close();
+            //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+            //Debug.Listeners.Add(tr1);
+            //Debug.WriteLine(DateTime.Now + " Text Hit With Mouse");
+            //tr1.Close();
             //shows that the mouse player is the winner if they reach 20 points
             if (score == 20)
             {
@@ -287,10 +290,10 @@ namespace moving_text_game
  
         public void OnProcessExit(object sender, EventArgs e)
         {
-                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-                Debug.Listeners.Add(tr1);
-                Debug.WriteLine(DateTime.Now + " Game Closed");
-                tr1.Close();
+        //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+        //Debug.Listeners.Add(tr1);
+        //Debug.WriteLine(DateTime.Now + " Game Closed");
+        //tr1.Close();
         if (score == 20)
         {
          mouWin++;
@@ -337,11 +340,11 @@ namespace moving_text_game
                 // debugging score output
                 if (score != 0)
                 {
-                    TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.stor"));
-                    Debug.Listeners.Add(tr1);
-                    Debug.WriteIf(score2 != 0, DateTime.Now + " TextScore  is: " + score2.ToString() + Environment.NewLine);
-                    Debug.WriteIf(score != 0, DateTime.Now + " MouseScore is: " + score.ToString() + Environment.NewLine);
-                    tr1.Close();
+                    //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.stor"));
+                    //Debug.Listeners.Add(tr1);
+                    //Debug.WriteIf(score2 != 0, DateTime.Now + " TextScore  is: " + score2.ToString() + Environment.NewLine);
+                    //Debug.WriteIf(score != 0, DateTime.Now + " MouseScore is: " + score.ToString() + Environment.NewLine);
+                    //tr1.Close();
                 }
                
             }
@@ -360,10 +363,10 @@ namespace moving_text_game
                 timeCount.Visible = true;
                 time++;
                 timeCount.Text = "Seconds Played: " + time.ToString();
-                TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.stor"));
-                Debug.Listeners.Add(tr1);
-                Debug.WriteLine("Seconds Played " + time);
-                tr1.Close();
+                //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ScoreLog.stor"));
+                //Debug.Listeners.Add(tr1);
+                //Debug.WriteLine("Seconds Played " + time);
+                //tr1.Close();
             }
         }
 
@@ -381,10 +384,10 @@ namespace moving_text_game
         {
             colorDialog1.ShowDialog();
             this.BackColor = colorDialog1.Color;
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-            Debug.Listeners.Add(tr1);
-            Debug.WriteLine("Setting Background Colour to: " + colorDialog1.Color);
-            tr1.Close();
+            //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+            //Debug.Listeners.Add(tr1);
+            //Debug.WriteLine("Setting Background Colour to: " + colorDialog1.Color);
+            //tr1.Close();
             if (colorDialog1.Color == colorDialog2.Color)
             { // anti cheat system for colour
                 MessageBox.Show("You have been caught cheating!", "Cheat Detected");
@@ -403,9 +406,9 @@ namespace moving_text_game
                         Controls[x].BackColor = Color.Transparent;
                         Controls[x].ForeColor = Color.Black;
                     }
-                Debug.Listeners.Add(tr1);
-                Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
-                tr1.Close();
+                //Debug.Listeners.Add(tr1);
+                //Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
+                //tr1.Close();
             }
         }
 
@@ -440,9 +443,9 @@ namespace moving_text_game
                         Controls[x].BackColor = Color.Transparent;
                         Controls[x].ForeColor = Color.Black;
                     }
-                Debug.Listeners.Add(tr1);
-                Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
-                tr1.Close();
+                //Debug.Listeners.Add(tr1);
+                //Debug.WriteLine("Cheating Dected at: " + DateTime.Now);
+                //tr1.Close();
             }
             for (int x = 0; x < Controls.Count; x++)
             Controls[x].BackColor = Color.Transparent;
@@ -527,7 +530,7 @@ namespace moving_text_game
         // instructions infomation
         private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (players == "")
+            if (players == "SP")
             {
                 System.Windows.Forms.MessageBox.Show("The game starts automaticly on the easy difficulty." + "\n" + "The AI or Text" + " player" +
                     " will move randomly in four directions." + "\n" + "its your job to click on the randomly moving text, before its score reaches 30." + "\n"
@@ -567,10 +570,10 @@ namespace moving_text_game
             score = 0;
             score2 = 0;
             this.lblMove.Location = new Point(457, 305);
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-            Debug.Listeners.Add(tr1);
-            Debug.WriteLine(DateTime.Now + " Changed to MP");
-            tr1.Close();
+            //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+            //Debug.Listeners.Add(tr1);
+            //Debug.WriteLine(DateTime.Now + " Changed to MP");
+            //tr1.Close();
             if (players == "MP")
             {
                 playersToolStripMenuItem1.Enabled = true;
@@ -590,16 +593,17 @@ namespace moving_text_game
             {
                 debug.Visible = true;
             }
+            //resets the scores and time when the game mode is changed.
             time = 0;
             score = 0;
             score2 = 0;
             this.lblMove.Location = new Point(457, 305);
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-            Debug.Listeners.Add(tr1);
-            Debug.WriteLine(DateTime.Now + " Changed to SP");
-            tr1.Close();
+            //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+            //Debug.Listeners.Add(tr1);
+            //Debug.WriteLine(DateTime.Now + " Changed to SP");
+            //tr1.Close();
             if (players == "SP")
-            { //
+            { // disabled single player options when changing to SP
                 playersToolStripMenuItem1.Enabled = false;
                 playerToolStripMenuItem.Enabled = true;
                 difficultyToolStripMenuItem.Enabled = true;
@@ -640,17 +644,19 @@ namespace moving_text_game
             fm2.Show();
         }
 
-        private void currentNamesToolStripMenuItem_Click(object sender, EventArgs e)
+        public void currentNamesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Text Name: " + text + "\n"+ "Mouse Name: " + mouse);
+                MessageBox.Show("Text Name: " + text + "\n" + "Mouse Name: " + mouse);
+            
+           
         }
-
+        //colour scheme for(never added)
         private void colorSchemesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fm3 = new Schemes();
             fm3.Show();
         }
-
+        //stats viewing
         private void viewStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Times Played: " + played + "\n" + "Mouse Wins: " + mouWin
