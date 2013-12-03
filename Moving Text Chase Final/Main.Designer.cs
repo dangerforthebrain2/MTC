@@ -66,6 +66,7 @@
             this.viewTitlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewChanglogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.namesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,6 @@
             this.movment = new System.Windows.Forms.Timer(this.components);
             this.rand = new System.Windows.Forms.Label();
             this.debug = new System.Windows.Forms.Label();
-            this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -378,6 +378,13 @@
             this.currentNamesToolStripMenuItem.Text = "Current Names";
             this.currentNamesToolStripMenuItem.Click += new System.EventHandler(this.currentNamesToolStripMenuItem_Click);
             // 
+            // viewStatisticsToolStripMenuItem
+            // 
+            this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
+            this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.viewStatisticsToolStripMenuItem.Text = "View Statistics";
+            this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
+            // 
             // namesToolStripMenuItem
             // 
             this.namesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -433,13 +440,6 @@
             this.debug.Text = "debugging output";
             this.debug.Visible = false;
             // 
-            // viewStatisticsToolStripMenuItem
-            // 
-            this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
-            this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.viewStatisticsToolStripMenuItem.Text = "View Statistics";
-            this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,7 +459,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Title";
+            this.Text = "d";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.menuStrip1.ResumeLayout(false);

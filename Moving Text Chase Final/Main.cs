@@ -54,7 +54,7 @@ namespace moving_text_game
        int played, txtWin, mouWin;
        String[] set1;
        String[] set2;
-        //debug enable/disable var
+       //debug enable/disable var
        int bugger = 1;
 
         public Form1()
@@ -94,8 +94,8 @@ namespace moving_text_game
             // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(12);
-            //ran = 11;
+            ran = r.Next(16);
+            //ran = 15;
             if (ran == 0) //batteries not included
             {
                 this.Text = mainTitleText + set1[0];
@@ -143,6 +143,22 @@ namespace moving_text_game
             if (ran == 11) //Dirty filthy traitors!
             {
                 this.Text = mainTitleText + set1[11];
+            }
+            if (ran == 12) //We take not responsablity for any injurys, to you or your family.
+            {
+                this.Text = mainTitleText + set1[12];
+            }
+            if (ran == 13) //Totally not a horror game.
+            {
+                this.Text = mainTitleText + set1[13];
+            }
+            if (ran == 14) //Graphics than Dwarf Fortress.
+            {
+                this.Text = mainTitleText + set1[14];
+            }
+            if (ran == 15) //Delete System32!
+            {
+                this.Text = mainTitleText + set1[15];
             }
             //picks out all the label and menustrip controls, then sets their colours
             for (int x = 0; x < Controls.Count; x++)
@@ -427,10 +443,10 @@ namespace moving_text_game
                     Controls[x].BackColor = colorDialog1.Color;
                     Controls[x].ForeColor = colorDialog2.Color;
                 }
-            TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
-            Debug.Listeners.Add(tr1);
-            Debug.WriteLine("Setting Text Colours to: " + colorDialog1.Color);
-            tr1.Close();
+            //TextWriterTraceListener tr1 = new TextWriterTraceListener(System.IO.File.AppendText("..\\..\\ActionsLog.stor"));
+            //Debug.Listeners.Add(tr1);
+            //Debug.WriteLine("Setting Text Colours to: " + colorDialog1.Color);
+            //tr1.Close();
             if (colorDialog1.Color == colorDialog2.Color )
             { // anti cheat system for colour
                 MessageBox.Show("You have been caught cheating!", "Cheat Detected");

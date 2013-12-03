@@ -92,6 +92,7 @@ added stat viewing.
 
 Beta 
 
-
+Version 0.5 3/12/13
+added 2 new titles.
 
 
