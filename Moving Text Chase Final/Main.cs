@@ -18,6 +18,8 @@ namespace moving_text_game
         
        // Author: Antony Sedgewick
 
+       //all debugging disabled at the moment.
+
        // central place for stroge of global controls
 
        // score inital values, and intial time 
