@@ -18,7 +18,7 @@ namespace moving_text_game
         
        // Author: Antony Sedgewick
 
-       //all debugging disabled at the moment.
+       //all debugging disabled at the moment via comments.
 
        // central place for stroge of global controls
 
@@ -27,7 +27,7 @@ namespace moving_text_game
        // Version Numbers(change these to change the version number)
        int version1 = 0;
        int version2 = 5;
-       // optinal version letter, when and full number interation is not approprate
+       // optinal version letter, when and full number interation is not approprate.
        String optinalVersionLetter = "";
        // greek version (leave blank for full)
        String greek = "Beta ";
@@ -53,7 +53,7 @@ namespace moving_text_game
        String stats = System.IO.File.ReadAllText("..\\..\\stats.stor");
        String mainTitleText;
        //stats stuff 
-       int played, txtWin, mouWin;
+       int played, txtWin, mouWin, lastTime;
        String[] set1;
        String[] set2;
        //debug enable/disable var
@@ -96,11 +96,12 @@ namespace moving_text_game
             // setting the title, stating the name, weather its alpha or beta, then the version number
             //generates a random number upon load
             Random r = new Random();
-            ran = r.Next(16);
-            //ran = 15;
+            ran = r.Next(18);
+            //ran = 17;
             if (ran == 0) //batteries not included
             {
                 this.Text = mainTitleText + set1[0];
+
             }
             if (ran == 1) //I saw an owl!
             {
@@ -162,6 +163,15 @@ namespace moving_text_game
             {
                 this.Text = mainTitleText + set1[15];
             }
+            if (ran == 16) //Better than ever!
+            {
+                this.Text = mainTitleText + set1[16];
+            }
+            if (ran == 17) //My favorite patch was 0.4.5.71.89.4b!
+            {
+                this.Text = mainTitleText + set1[17];
+            }
+
             //picks out all the label and menustrip controls, then sets their colours
             for (int x = 0; x < Controls.Count; x++)
             {
@@ -185,6 +195,7 @@ namespace moving_text_game
             played = Int16.Parse(set2[0]);
             txtWin = Int16.Parse(set2[1]);
             mouWin = Int16.Parse(set2[2]);
+            lastTime = Int16.Parse(set2[3]);
         }
         //debug display options
         public void enableToolStripMenuItem_Click(object sender, EventArgs e)
@@ -678,7 +689,7 @@ namespace moving_text_game
         private void viewStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Times Played: " + played + "\n" + "Mouse Wins: " + mouWin
-                + "\n" + "Text Wins: " + txtWin);
+                + "\n" + "Text Wins: " + txtWin + "\n" + "Time last Played: " + lastTime);
         }
     }
 }
